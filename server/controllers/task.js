@@ -27,7 +27,23 @@ exports.describeTask = async (req, res) => {
 exports.listTasks = async (req, res) => {
     const { prefix } = req.body;
 
-    const tasks = await Task.find( {content: { $regex: prefix } } );
+    const tasks = await Task.find( {content: { $regex: prefix, $options: "i" } } );
 
     res.json(tasks);
+};
+
+exports.resolveTask = async (req, res) => {
+    const task = await Task.findOne({ _id: req.params.taskId });
+    let status;
+
+    if(task.status === taskStatusMap.RESOLVED){
+        status = taskStatusMap.UNRESOLVED;
+    }
+    else{
+        status = taskStatusMap.RESOLVED;
+    }
+
+    await Task.updateOne({ _id: req.params.taskId }, { status });
+
+    res.json({message: 'Task has been updated.'});
 };

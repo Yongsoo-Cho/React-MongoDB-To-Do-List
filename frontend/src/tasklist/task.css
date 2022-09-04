@@ -1,0 +1,95 @@
+.task_list_background{
+    overflow: auto;
+    height: 100vh;
+    background-color: pink;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.task_entry{
+    background-color: white;
+    border-radius: 10px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+
+    padding: 10px;
+    margin: 10px 30px;
+    max-width: 600px;
+}
+.task_entry button{
+    padding: 5px;
+    min-width: 90px;
+    font-size: 15px;
+    font-weight: bold;
+    display: inline-block;
+}
+.task_entry h3{
+    display: inline-block;
+    font-weight: normal;
+    font-size: 15px;
+    color: gray;
+    margin-left: 10px;
+}
+.taskList input{
+    display: block;
+    font-size: 15px;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    margin: 10px auto;
+    padding-left: 10px;
+}
+.taskList input:focus{
+    outline: none;
+    font-size: 20px;
+}
+.taskCreate textarea{
+    display: block;
+    font-size: 15px;
+
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+
+    margin: 10px auto;
+    padding: 10px;
+
+    min-height: 30vh;
+    min-width: 600px;
+}
+.taskCreate textarea:focus{
+    outline: none;
+}
+.taskCreate h3{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+.taskCreate button{
+    padding: 5px;
+    min-width: 90px;
+    font-size: 15px;
+    font-weight: bold;
+
+    text-align: center;
+    margin: 5px 50vh;
+}
+
+.taskContainer-enter {
+    background-color: white;
+    left: 0px;
+}
+.taskContainer-enter-active {
+    background-color: lightgreen;
+    transition: background-color 200ms;
+}
+.taskContainer-exit {
+    background-color: lightgreen;
+}
+.taskContainer-exit-active {
+    background-color: white;
+    transition: background-color 200ms;
+}
